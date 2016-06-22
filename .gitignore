@@ -35,3 +35,33 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+##########
+.DS_STORE
+node_modules
+*~
+*.pyc
+static
+.grunt
+_SpecRunner.html
+__benchmarks__
+build/
+coverage/
+.module-cache
+*.gem
+docs/.bundle
+docs/code
+docs/_site
+docs/.sass-cache
+docs/js/*
+docs/downloads
+docs/vendor/bundle
+examples/shared/*.js
+test/the-files-to-test.generated.js
+*.log*
+chrome-user-data
+*.sublime-project
+*.sublime-workspace
+.idea
+*.iml
+.vscode
