@@ -2,8 +2,9 @@
   "name": "Magic-Mycroft-Mirror",
   "version": "1.0.0",
   "description": "Magic Mycroft Mirror",
-  "main": "index.js",
+  "main": "./build/window.js",
   "scripts": {
+    "start": "webpack && electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +17,9 @@
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
     "babel-preset-react": "^6.5.0",
+    "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.23.1",
+    "electron-prebuilt": "^1.2.5",
     "file-loader": "^0.9.0",
     "postcss-loader": "^0.9.1",
     "style-loader": "^0.13.1",
@@ -25,6 +28,8 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "electron-prebuilt": "^1.2.5",
+    "fs": "0.0.2",
     "bootstrap": "^3.3.6",
     "flipclock": "^0.7.8",
     "jquery": "^3.0.0",

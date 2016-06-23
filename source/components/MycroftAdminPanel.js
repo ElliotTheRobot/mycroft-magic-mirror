@@ -1,13 +1,11 @@
 var React = require('react');
 
 var SysInfo = require('./SysInfo.js');
+var MycroftServiceButton = require('./MycroftServiceButton');
 
 module.exports = React.createClass({
   componentDidMount: function() {
-    var clock = $('.clock').FlipClock({
-      clockFace: 'TwentyFourHourClock',
-      showSeconds: false
-    });
+
   },
   render: function() {
     return (
@@ -21,9 +19,9 @@ module.exports = React.createClass({
             <button id="btn_start_all" type="button" className="col-xs-8 btn btn-primary btn-block" name="button">Start Services</button>
           </div>
           <div className="row  top-buffer " >
-            <button id="btn_service" type="button" name="btn_service" className="btn btn-default col-xs-3">Start MyCroft Service</button>
-            <button id="btn_voice" type="button" name="btn_voice" className="btn btn-default col-xs-4 col-xs-offset-1">Start Voice Service</button>
-            <button id="btn_skills" type="button" name="btn_skills" className="btn btn-default col-xs-3 col-xs-offset-1">Start Skills Service</button>
+            <MycroftServiceButton ServiceName="service" />
+            <MycroftServiceButton ServiceName="voice" />
+            <MycroftServiceButton ServiceName="skills" />
           </div>
           <div className="row top-buffer ">
             <button id="OpenWebSocket" type="button" name="OpenWebSocket" className="btn btn-primary col-xs-12">Connect UI to WS</button>
