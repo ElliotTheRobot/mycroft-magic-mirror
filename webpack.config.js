@@ -24,5 +24,9 @@ module.exports = {
         loader:"url?prefix=font/&limit=5000"
       }
     ]
+  },
+  devServer: {
+    contentBase: "./build",
+    hot: true
   }
 };
