@@ -17,7 +17,9 @@ module.exports = React.createClass({
     return (
       <div className="container">
         <MyCroftAdminPanel />
-        <Clock />
+        <div className="row clockContainer">
+          <Clock />
+        </div>
         <SysInfo process={this.props.process}/>
       </div>
     );

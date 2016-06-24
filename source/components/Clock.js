@@ -12,10 +12,14 @@ module.exports = React.createClass({
       clockFace: 'TwentyFourHourClock',
       showSeconds: false
     });
+
+    $(".clock").css({"display":"inline-block","width":"auto" });
+
+
   },
   render: function() {
     return (
-      <div  className='row clock' ></div>
+      <div  className='clock' ></div>
     );
   }
 });

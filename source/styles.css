@@ -6,3 +6,12 @@ body{
 .top-buffer {
   margin-top:20px;
 }
+
+clockContainer + div {
+  display: inline-block;
+  width: auto;
+}
+
+.clockContainer {
+  text-align: center;
+}

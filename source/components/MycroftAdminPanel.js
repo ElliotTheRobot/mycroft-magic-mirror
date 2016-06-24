@@ -24,7 +24,7 @@ module.exports = React.createClass({
             <MycroftServiceButton ServiceName="skills" />
           </div>
           <div className="row top-buffer ">
-            <button id="OpenWebSocket" type="button" name="OpenWebSocket" className="btn btn-primary col-xs-12 ">Connect UI to WS</button>
+            <button id="OpenWebSocket" type="button" name="OpenWebSocket" className="btn btn-primary col-md-12">Connect UI to WS</button>
           </div>
         </div>
       </div>
