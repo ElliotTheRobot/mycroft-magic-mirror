@@ -20,10 +20,8 @@ module.exports = React.createClass({
       this.stopService();
     }
   },
-  startService: function() {
 
-    console.log("starting service");
-    console.log(global);
+  startService: function() {
 
     var child = spawn(
         '',
@@ -62,59 +60,30 @@ module.exports = React.createClass({
         console.log('stdin-' + name + ':'+data);
     });
 
-    ///
-    //$("#btn_" + name).prop('btn-type','stop');
-    //$("#btn_" + name).prop('PID',child.pid);
-    //$("#btn_" + name).html('Stop ' + name + ' service');
-
     this.setState({buttonType: 'Stop', PID: child.pid});
   },
+
   stopService: function() {
 
-    
+    //make script executable and run
     var options = {};
-    console.log('In stop function, but it doesnt work :( ');
-    console.log('PID: ' + this.state.PID);
+    options.cwd = installDir +'/build'
 
-    //make script executable
-    options = {};
-    console.log(__dirname);
-    options.cwd = installDir +'/build'//__dirname // + "build"
-    console.log(installDir +'/build');
-    //cmd//
     exec('chmod 700 ./StopProcess.sh && ./StopProcess.sh ' + this.state.PID, options , function(error, stdout, stderr) {
       console.log('erx: ' + error);
       console.log('erx: ' + stdout);
       console.log('erx: ' + stderr);
     });
 
-
-
-    //var cmd = 'pkill -TERM -P ' + PID;
-    //var cmd = './StopProcess.sh ' + this.state.PID;
-    //console.log(cmd);
-
-    //options = {};
-    //console.log(__dirname);
-    //options.cwd = installDir +'/build'//__dirname // + "build"
-    //console.log(installDir +'/build');
-    //cmd//
-    //exec(cmd, options , function(error, stdout, stderr) {
-    //  console.log(error);
-    //  console.log(stdout);
-    //  console.log(stderr);
-    //});
-
-
     this.setState({
       buttonType: 'Start',
       PID: 0
     });
-
   },
+
   render: function() {
     return (
-      <button type="button" onClick={this.handleClick} className="btn btn-default col-xs-4">---{this.state.buttonType} {this.props.ServiceName} service [{this.state.PID}]---</button>
+      <button type="button" onClick={this.handleClick} className="btn btn-default col-xs-12 col-md-4">---{this.state.buttonType} {this.props.ServiceName} service [{this.state.PID}]---</button>
     );
   }
 });

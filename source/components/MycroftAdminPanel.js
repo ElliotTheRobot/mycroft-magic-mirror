@@ -12,11 +12,11 @@ module.exports = React.createClass({
       <div>
         <div className="row">
           <button id="btn_admin" data-toggle="collapse" data-target="#OptionsDiv" type="button" className="col-xs-2 btn btn btn-info" name="button">---admin---</button>
-          
+
         </div>
         <div id="OptionsDiv" className="collapse top-buffer ">
           <div className="row">
-            <button id="btn_start_all" type="button" className="col-xs-8 btn btn-primary btn-block" name="button">Start Services</button>
+            <button id="btn_start_all" type="button" className="col-xs-12  btn btn-primary btn-block" name="button">Start Services</button>
           </div>
           <div className="row  top-buffer " >
             <MycroftServiceButton ServiceName="service" />
@@ -24,7 +24,7 @@ module.exports = React.createClass({
             <MycroftServiceButton ServiceName="skills" />
           </div>
           <div className="row top-buffer ">
-            <button id="OpenWebSocket" type="button" name="OpenWebSocket" className="btn btn-primary col-xs-12">Connect UI to WS</button>
+            <button id="OpenWebSocket" type="button" name="OpenWebSocket" className="btn btn-primary col-xs-12 ">Connect UI to WS</button>
           </div>
         </div>
       </div>
