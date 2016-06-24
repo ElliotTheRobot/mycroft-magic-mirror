@@ -38,7 +38,7 @@ module.exports = {
   target: 'node',
   plugins: [
         new CopyWebpackPlugin([
-          { from: './source/window.js' },
+          { from: './source/electron.js' },
           { from: './source/assets/scripts/StopProcess.sh'}
         ],
         {

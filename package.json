@@ -2,7 +2,7 @@
   "name": "Magic-Mycroft-Mirror",
   "version": "1.0.0",
   "description": "Magic Mycroft Mirror",
-  "main": "./build/window.js",
+  "main": "./build/electron.js",
   "scripts": {
     "start": "webpack && electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
