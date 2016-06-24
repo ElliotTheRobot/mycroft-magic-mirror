@@ -1,6 +1,6 @@
 #!/bin/bash
 
-kill_descendant_processes() {
+StopProcess() {
   local pid="$1"
   local and_self="${2:-false}"
   if children="$(pgrep -P "$pid")"; then
