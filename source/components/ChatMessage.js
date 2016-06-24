@@ -2,15 +2,10 @@
 var React = require('react');
 
 module.exports = React.createClass({
-//  componentDidMount: function() {
 
-//  },
-//  getInitialState: function() {
-
-  //},
   render: function() {
     return (
-      <h2  className='row' >---Module1---</h2>
+      <h3 className='message' >[{this.props.id}]{this.props.origin} : {this.props.text}</h3>
     );
   }
 });

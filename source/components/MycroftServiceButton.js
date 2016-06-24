@@ -7,6 +7,13 @@ var mycroftCoreScript = '/home/josh/mycroft-core/start.sh';
 var installDir = '/home/josh/magic-mycroft-mirror';
 
 module.exports = React.createClass({
+
+  componentDidMount: function() {
+    console.log("button prps: ");
+    console.log(this.props);
+
+  },
+
   getInitialState: function() {
     return {
       buttonType: 'Start',
@@ -33,10 +40,12 @@ module.exports = React.createClass({
         }
     );
 
-    console.log('Created process with PID:' + child.pid);
+    console.log('Created process with PID:' + child.pid); 
 
     child.stdout.on('data', function(data){
         console.log('stdout-' + name + ':'+data);
+
+        //this.props.onMessage('stdout-' + name + ':'+ data);
     });
 
     child.stderr.on('data', function(data){
@@ -53,11 +62,12 @@ module.exports = React.createClass({
 
         }else {
            console.log('stderr-' + name + ':'+data);
+             //this.props.onMessage('stderr-' + name + ':'+ data);
         }
     });
 
     child.stdin.on('data', function(data){
-        console.log('stdin-' + name + ':'+data);
+        //this.props.onMessage('stdin-' + name + ':'+data);
     });
 
     this.setState({buttonType: 'Stop', PID: child.pid});
