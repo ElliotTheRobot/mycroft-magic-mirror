@@ -1,8 +1,16 @@
 var React = require('react');
 
+var spawn = require('child_process').spawn;
+var exec = require('child_process').exec;
+
+var mycroftCoreScript = '/home/josh/mycroft-core/start.sh';
+
 module.exports = React.createClass({
   getInitialState: function() {
-    return {buttonType: 'Start'};
+    return {
+      buttonType: 'Start',
+
+    };
   },
   handleClick: function() {
     if (this.state.buttonType === 'Start') {
@@ -13,9 +21,12 @@ module.exports = React.createClass({
   },
   startService: function() {
 
+    console.log("starting service");
+    console.log(global);
+
     var child = spawn(
         '',
-        [mycroftCoreScript, name],
+        [mycroftCoreScript, this.props.ServiceName],
         {
           'cwd': '/home/josh/mycroft-core',
           'env': process.env,

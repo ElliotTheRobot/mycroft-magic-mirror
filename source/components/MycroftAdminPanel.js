@@ -12,7 +12,7 @@ module.exports = React.createClass({
       <div>
         <div className="row">
           <button id="btn_admin" data-toggle="collapse" data-target="#OptionsDiv" type="button" className="col-xs-2 btn btn btn-info" name="button">---admin---</button>
-          <SysInfo/>
+          
         </div>
         <div id="OptionsDiv" className="collapse top-buffer ">
           <div className="row">

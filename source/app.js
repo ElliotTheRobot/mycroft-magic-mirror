@@ -9,13 +9,12 @@ require('./styles.css');
 //jQuery sucks in npm with bootstrap
 global.jQuery = require('jquery');
 $=global.jQuery
-
 require('bootstrap');
 
 
 var App = require('./components/App.js');
 
 ReactDOM.render(
-  <App  />,
+  <App process={process}/>,
   document.getElementById('app')
 );

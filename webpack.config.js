@@ -35,17 +35,20 @@ module.exports = {
     contentBase: "./build",
     hot: true
   },
+  target: 'node',
   plugins: [
-        new CopyWebpackPlugin([ { from: './source/window.js' }], {
-            ignore: [
-                // Doesn't copy any files with a txt extension
-                '*.txt'
-            ],
-
-            // By default, we only copy modified files during
-            // a watch or webpack-dev-server build. Setting this
-            // to `true` copies all files.
-            copyUnmodified: true
+        new CopyWebpackPlugin([
+          { from: './source/window.js' },
+          { from: './source/assets/scripts/StopProcess.sh'}
+        ],
+        {
+          ignore: [
+            '*.txt'
+          ],
+          // By default, we only copy modified files during
+          // a watch or webpack-dev-server build. Setting this
+          // to `true` copies all files.
+          copyUnmodified: true
         }
       )]
 

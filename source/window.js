@@ -19,6 +19,13 @@ function createWindow() {
   );
 
   win.loadURL('file://'+__dirname+'/index.html');
+
+  global.zzz = "testetetetetetete";
+  console.log(process);
+  console.log(process.argv);
+  console.log(process.versions.node);
+  console.log(process.versions.chrome);
+  console.log(process.versions.electron);
 };
 
 app.on('ready', createWindow);
