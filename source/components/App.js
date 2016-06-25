@@ -5,6 +5,7 @@ var Module1 = require('./Module1.js');
 var Clock = require('./Clock');
 var SysInfo = require('./SysInfo.js');
 var ChatLog = require('./ChatLog.js');
+var PluginZone = require('./PluginZone.js');
 //require('module');
 
 
@@ -47,10 +48,13 @@ module.exports = React.createClass({
       <div className="container">
         <MyCroftAdminPanel onMycroftOutput={this.newMycroftMessage} />
 
+        <PluginZone />
         <div className="row clockContainer">
           <Clock />
         </div>
-        <ChatLog messages={this.state.mycroftMessages} />
+        <div className="navbar navbar-fixed-bottom">
+          <ChatLog messages={this.state.mycroftMessages} />
+        </div>
       </div>
     );
   }
