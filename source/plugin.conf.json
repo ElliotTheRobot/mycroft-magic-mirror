@@ -1,1 +1,9 @@
-{}
+{
+  "plugins":{
+    "PluginTop" : "Clock.js",
+    "PluginLeft" : null,
+    "PluginMid" : null,
+    "PluginRight" : null,
+    "PluginBottom" : null
+  }
+}

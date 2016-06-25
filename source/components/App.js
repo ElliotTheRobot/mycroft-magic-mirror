@@ -49,9 +49,7 @@ module.exports = React.createClass({
         <MyCroftAdminPanel onMycroftOutput={this.newMycroftMessage} />
 
         <PluginZone />
-        <div className="row clockContainer">
-          <Clock />
-        </div>
+
         <div className="navbar navbar-fixed-bottom">
           <ChatLog messages={this.state.mycroftMessages} />
         </div>
