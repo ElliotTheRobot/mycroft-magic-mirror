@@ -1,7 +1,7 @@
 //Using As Template
 var React = require('react');
 
-var ChatMessage = require('./ChatMessage');
+var ChatMessage = require('./ChatMessage.js');
 
 module.exports = React.createClass({
     componentDidMount: function() {
@@ -9,6 +9,8 @@ module.exports = React.createClass({
       console.log(this.props);
     },
   render: function() {
+    console.log('in CL');
+    console.log(this.props);
     var chatMessages = this.props.messages.map(function(message) {
           return (
           <ChatMessage origin={message.origin} key={message.id} text={message.text} />
