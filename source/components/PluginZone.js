@@ -3,31 +3,27 @@ var React = require('react');
 
 var config = require('../config.json');
 
+var PluginTop = require('./Blank.js');
+var PluginLeft = require('./Blank.js');
+var PluginMid = require('./Blank.js');
+var PluginRight = require('./Blank.js');
+var PluginBottom = require('./Blank.js');
+
 //Horrible :'(  '
-if (config.plugins.PluginTop == null) {
-  var PluginTop = require('./Blank.js');
-} else {
-  var PluginTop = require('../plugins/' + config.plugins.PluginTop);
+if (config.plugins.PluginTop != null) {
+  PluginTop = require('../plugins/' + config.plugins.PluginTop);
 }
-if (config.plugins.PluginLeft == null) {
-  var PluginLeft = require('./Blank.js');
-} else {
-  var PluginLeft = require('../plugins/' + config.plugins.PluginLeft);
+if (config.plugins.PluginLeft != null) {
+  PluginLeft = require('../plugins/' + config.plugins.PluginLeft);
 }
-if (config.plugins.PluginMid == null) {
-  var PluginMid = require('./Blank.js');
-} else {
-  var PluginMid = require('../plugins/' + config.plugins.PluginMid);
+if (config.plugins.PluginMid != null) {
+  PluginMid = require('../plugins/' + config.plugins.PluginMid);
 }
-if (config.plugins.PluginRight == null) {
-  var PluginRight = require('./Blank.js');
-} else {
-  var PluginRight = require('../plugins/' + config.plugins.PluginRight);
+if (config.plugins.PluginRight != null) {
+  PluginRight = require('../plugins/' + config.plugins.PluginRight);
 }
-if (config.plugins.PluginBottom == null) {
-  var PluginBottom = require('./Blank.js');
-} else {
-  var PluginBottom = require('../plugins/' + config.plugins.PluginBottom);
+if (config.plugins.PluginBottom != null) {
+  PluginBottom = require('../plugins/' + config.plugins.PluginBottom);
 }
 
 module.exports = React.createClass({
