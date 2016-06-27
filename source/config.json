@@ -5,5 +5,9 @@
     "PluginMid" : null,
     "PluginRight" : null,
     "PluginBottom" : null
+  },
+  "paths":{
+    "mycroftCoreDir":"/home/josh/mycroft-core",
+    "installDir":"/home/josh/mycroft-magic-mirror"
   }
 }

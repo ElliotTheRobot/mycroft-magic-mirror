@@ -1,7 +1,7 @@
 //Using As Template
 var React = require('react');
 
-var config = require('../plugin.conf.json');
+var config = require('../config.json');
 
 //Horrible :'(  '
 if (config.plugins.PluginTop == null) {

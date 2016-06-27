@@ -3,8 +3,10 @@ var React = require('react');
 var spawn = require('child_process').spawn;
 var exec = require('child_process').exec;
 
-var mycroftCoreDir = '/home/josh/mycroft-core';
-var installDir = '/home/josh/mycroft-magic-mirror';
+var config = require('../config.json');
+
+var mycroftCoreDir = config.paths.mycroftCoreDir//'/home/josh/mycroft-core';
+var installDir = config.paths.installDir //'/home/josh/mycroft-magic-mirror';
 
 
 
