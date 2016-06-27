@@ -1,8 +1,6 @@
 var React = require('react');
 
-var MyCroftAdminPanel = require('./MycroftAdminPanel.js');
-var Module1 = require('./Module1.js');
-var Clock = require('./Clock');
+var MyCroftAdminPanel = require('./MycroftAdminPanel.js'); 
 var SysInfo = require('./SysInfo.js');
 var ChatLog = require('./ChatLog.js');
 var PluginZone = require('./PluginZone.js');
