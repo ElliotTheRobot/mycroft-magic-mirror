@@ -3,7 +3,7 @@ var React = require('react');
 var spawn = require('child_process').spawn;
 var exec = require('child_process').exec;
 
-var mycroftCoreScript = '/home/josh/mycroft-core/start.sh';
+var mycroftCoreDir = '/home/josh/mycroft-core';
 var installDir = '/home/josh/mycroft-magic-mirror';
 
 
@@ -37,9 +37,9 @@ module.exports = React.createClass({
 
     var child = spawn(
         '',
-        [mycroftCoreScript, this.props.ServiceName],
+        [mycroftCoreDir + '/start.sh', this.props.ServiceName],
         {
-          'cwd': '/home/josh/mycroft-core',
+          'cwd': mycroftCoreDir,
           'env': process.env,
           'shell': true
         }
@@ -67,21 +67,14 @@ module.exports = React.createClass({
           }
 
         }else {
-           console.log('stderr-' + name + ':'+data);
-           console.log(data.toString());
-           //text = "." + data.toString() + ".";
            var text = data.toString().replace(/(\r\n|\n|\r)/gm,"");
-           text = "." + text + "."
-           console.log(text);
+           //text = "." + text + "."
 
-           if (new String(".Terminated.").valueOf() == new String("." + data.toString().replace(/(\r\n|\n|\r)/gm,"") + ".").valueOf()) {
-             console.log("deewdwedwedw");
-             self.setState({buttonType: 'Start--', PID: 0});
-             console.log('feojnfoewfjweof');
+           if (new String("Terminated").valueOf() == new String(data.toString().replace(/(\r\n|\n|\r)/gm,"")).valueOf()) {
+             this.setState({buttonType: 'Start', PID: 0});
            }
-             //this.props.onMessage('stderr-' + name + ':'+ data);
         }
-    });
+    }.bind(this)  );
 
     child.stdin.on('data', function(data){
         //this.props.onMessage('stdin-' + name + ':'+data);
@@ -103,14 +96,14 @@ module.exports = React.createClass({
     options.cwd = __dirname + "/scripts"
 
 
-    exec('chmod 700 /home/josh/mycroft-magic-mirror/build/kill_descendant_processes.sh ', {} , function(error, stdout, stderr) {
+    exec('chmod 700 '+installDir + '/build/kill_descendant_processes.sh ', {} , function(error, stdout, stderr) {
       console.log(error);
       console.log(stdout);
       console.log(stderr);
     });
 
 
-    exec('/home/josh/mycroft-magic-mirror/build/kill_descendant_processes.sh ' + this.state.PID, {} , function(error, stdout, stderr) {
+    exec( installDir + '/build/kill_descendant_processes.sh ' + this.state.PID, {} , function(error, stdout, stderr) {
       console.log(error);
       console.log(stdout);
       console.log(stderr);
