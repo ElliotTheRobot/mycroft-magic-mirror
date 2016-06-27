@@ -1,8 +1,8 @@
 var React = require('react');
 
 var SysInfo = require('./SysInfo.js');
-var MycroftServiceButton = require('./MycroftServiceButton');
-var MycroftWebServiceButton = require('./MycroftWebServiceButton');
+var MycroftServiceButton = require('./MycroftServiceButton.js');
+var MycroftWebServiceButton = require('./MycroftWebServiceButton.js');
 
 module.exports = React.createClass({
 

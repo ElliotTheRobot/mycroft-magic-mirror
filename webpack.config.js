@@ -43,7 +43,7 @@ module.exports = {
   plugins: [
         new CopyWebpackPlugin([
           { from: './source/electron.js' },
-          { from: './source/assets/scripts/StopProcess.sh'}
+          { from: './source/assets/scripts/kill_descendant_processes.sh'}
         ],
         {
           ignore: [

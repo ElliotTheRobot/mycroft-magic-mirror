@@ -4,7 +4,9 @@ var spawn = require('child_process').spawn;
 var exec = require('child_process').exec;
 
 var mycroftCoreScript = '/home/josh/mycroft-core/start.sh';
-var installDir = '/home/josh/magic-mycroft-mirror';
+var installDir = '/home/josh/mycroft-magic-mirror';
+
+
 
 module.exports = React.createClass({
 
@@ -15,6 +17,7 @@ module.exports = React.createClass({
   },
 
   getInitialState: function() {
+      self = this;
     return {
       buttonType: 'Start',
       PID: 0
@@ -22,8 +25,10 @@ module.exports = React.createClass({
   },
   handleClick: function() {
     if (this.state.buttonType === 'Start') {
+      console.log('starting service');
       this.startService();
     } else {
+      console.log('stopping service');
       this.stopService();
     }
   },
@@ -40,7 +45,7 @@ module.exports = React.createClass({
         }
     );
 
-    console.log('Created process with PID:' + child.pid); 
+    console.log('Created process with PID:' + child.pid);
 
     child.stdout.on('data', function(data){
         console.log('stdout-' + name + ':'+data);
@@ -50,6 +55,7 @@ module.exports = React.createClass({
 
     child.stderr.on('data', function(data){
         //console.log('stderr-' + name + ':'+data);
+
         if (name === 'voice') {
 
           var data = String(data).substring(String(data).lastIndexOf("SpeechClient"));
@@ -62,6 +68,17 @@ module.exports = React.createClass({
 
         }else {
            console.log('stderr-' + name + ':'+data);
+           console.log(data.toString());
+           //text = "." + data.toString() + ".";
+           var text = data.toString().replace(/(\r\n|\n|\r)/gm,"");
+           text = "." + text + "."
+           console.log(text);
+
+           if (new String(".Terminated.").valueOf() == new String("." + data.toString().replace(/(\r\n|\n|\r)/gm,"") + ".").valueOf()) {
+             console.log("deewdwedwedw");
+             self.setState({buttonType: 'Start--', PID: 0});
+             console.log('feojnfoewfjweof');
+           }
              //this.props.onMessage('stderr-' + name + ':'+ data);
         }
     });
@@ -70,25 +87,65 @@ module.exports = React.createClass({
         //this.props.onMessage('stdin-' + name + ':'+data);
     });
 
+  //  child.on('exit', function () {
+  //    console.log('in exit');
+  //     self.setState({buttonType: 'Start--', PID: 0});
+  //  });
+
+
+
     this.setState({buttonType: 'Stop', PID: child.pid});
   },
 
   stopService: function() {
 
-    //make script executable and run
     var options = {};
-    options.cwd = installDir +'/build'
+    options.cwd = __dirname + "/scripts"
 
-    exec('chmod 700 ./StopProcess.sh && ./StopProcess.sh ' + this.state.PID, options , function(error, stdout, stderr) {
-      console.log('erx: ' + error);
-      console.log('erx: ' + stdout);
-      console.log('erx: ' + stderr);
+
+    exec('chmod 700 /home/josh/mycroft-magic-mirror/build/kill_descendant_processes.sh ', {} , function(error, stdout, stderr) {
+      console.log(error);
+      console.log(stdout);
+      console.log(stderr);
     });
 
-    this.setState({
-      buttonType: 'Start',
-      PID: 0
+
+    exec('/home/josh/mycroft-magic-mirror/build/kill_descendant_processes.sh ' + this.state.PID, {} , function(error, stdout, stderr) {
+      console.log(error);
+      console.log(stdout);
+      console.log(stderr);
     });
+
+
+
+    var pid_num = this.state.PID;
+
+    /**var child = spawn(
+        '',
+        ['/home/josh/mycroft-magic-mirror/build/kill_descendant_processes.sh', pid_num],
+        {
+          'cwd': '/home/josh/mycroft-core',
+          'env': process.env,
+          'shell': true
+        }
+    );
+
+    console.log('Created process with PID:' + child.pid);
+
+    child.stdout.on('data', function(data){
+      console.log('stdout: ' + data);
+    });
+
+    child.stderr.on('data', function(data){
+      console.log('stderr: ' + data)
+    });
+
+    child.stdin.on('data', function(data){
+      console.log('stdin: ' + data)
+    });
+
+**/
+
   },
 
   render: function() {
