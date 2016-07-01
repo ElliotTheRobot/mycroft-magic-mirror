@@ -18,7 +18,7 @@ module.exports = React.createClass({
     return (
       <div>
         <div className="row">
-          <button id="btn_admin" data-toggle="collapse" data-target="#OptionsDiv" type="button" className="col-xs-12  btn btn-info btn-block" name="button">Mycroft Inside</button>
+          <button id="btn_admin" data-toggle="collapse" data-target="#OptionsDiv" type="button" className="col-xs-12  btn btn-info btn-block" name="button">Mycroft Inside ┌∩┐(◣_◢)┌∩┐</button>
         </div>
         <div id="OptionsDiv" className="collapse top-buffer ">
           <div className="row  top-buffer " >
