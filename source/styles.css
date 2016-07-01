@@ -1,10 +1,32 @@
 
 body{
-  background-image: url(./assets/images/use_your_illusion_@2X.png);
+  /**background-image: url(./assets/images/use_your_illusion_@2X.png);**/
+  background: #000;
+  color: #aaa;
   margin-top: 15px;
   font-family: 'Oswald', sans-serif;
 }
 
 .top-buffer {
   margin-top:20px;
+}
+
+.dimmed-1 {
+  color: #ffffff;
+}
+
+.dimmed-2 {
+  color: #cccccc;
+}
+
+.dimmed-3 {
+  color: #999999;
+}
+
+.dimmed-4 {
+  color: #666666;
+}
+
+.dimmed-5 {
+  color: #333333;
 }
