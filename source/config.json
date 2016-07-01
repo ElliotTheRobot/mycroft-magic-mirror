@@ -1,6 +1,6 @@
 {
   "plugins":{
-    "PluginTop" : "Clock",
+    "PluginTop" : "FlipClock",
     "PluginLeft" : null,
     "PluginMid" : null,
     "PluginRight" : null,
