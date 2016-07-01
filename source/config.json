@@ -4,7 +4,7 @@
     "PluginLeft" : null,
     "PluginMid" : null,
     "PluginRight" : null,
-    "PluginBottom" : null
+    "PluginBottom" : "MessageLog"
   },
   "paths":{
     "mycroftCoreDir":"/home/josh/mycroft-core",

@@ -4,10 +4,9 @@ var React = require('react');
 module.exports = React.createClass({
 
   render: function() {
-    console.log("in CL");
-    console.log(this.props);
+    var classes = 'message ' + 'dimmed-'+ this.props.cssDimmLvl;
     return (
-      <h3 className='message' >[{this.props.key}]{this.props.origin} : {this.props.text}</h3>
+      <h3 className={classes} >{this.props.origin} : {this.props.text}</h3>
     );
   }
 });

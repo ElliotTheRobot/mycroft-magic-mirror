@@ -37,23 +37,23 @@ module.exports = React.createClass({
       <div  className='PluginZone' >
         <div className='row'>
           <div className='PluginZone-Top col-xs-12'>
-            <PluginTop mycroftInfo={this.props.mycroft} />
+            <PluginTop pluginInfo={config.plugins}  mycroftInfo={this.props.mycroft} />
           </div>
         </div>
         <div className='row'>
           <div className='PluginZone-Left col-xs-12 col-md-3'>
-            <PluginLeft mycroftInfo={this.props.mycroft} />
+            <PluginLeft pluginInfo={config.plugins} mycroftInfo={this.props.mycroft} />
           </div>
           <div className='PluginZone-Mid col-xs-12 col-md-6'>
-            <PluginMid mycroftInfo={this.props.mycroft} />
+            <PluginMid pluginInfo={config.plugins} mycroftInfo={this.props.mycroft} />
           </div>
           <div className='PluginZone-Right col-xs-12 col-md-3'>
-            <PluginRight mycroftInfo={this.props.mycroft} />
+            <PluginRight pluginInfo={config.plugins} mycroftInfo={this.props.mycroft} />
           </div>
         </div>
         <div className='row'>
-          <div className='PluginZone-Bottom col-xs-12'>
-            <PluginBottom mycroftInfo={this.props.mycroft} />
+          <div className=' navbar navbar-fixed-bottom PluginZone-Bottom col-xs-12'>
+            <PluginBottom pluginInfo={config.plugins} mycroftInfo={this.props.mycroft} />
           </div>
         </div>
       </div>
