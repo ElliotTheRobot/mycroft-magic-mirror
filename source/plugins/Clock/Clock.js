@@ -1,9 +1,10 @@
 var React = require('react');
 //global.jQuery = require('jquery');
 //$=global.jQuery
-//require('../assets/external/flipclock/flipclock.js');
-require('../../node_modules/flipclock/compiled/flipclock.js');
-require('../../node_modules/flipclock/compiled/flipclock.css');
+
+//Should really ref a cdn...
+require('../../../node_modules/flipclock/compiled/flipclock.js');
+require('../../../node_modules/flipclock/compiled/flipclock.css');
 
 
 module.exports = React.createClass({

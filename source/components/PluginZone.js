@@ -11,19 +11,19 @@ var PluginBottom = require('./Blank.js');
 
 //Horrible :'(  '
 if (config.plugins.PluginTop != null) {
-  PluginTop = require('../plugins/' + config.plugins.PluginTop);
+  PluginTop = require('../plugins/' + config.plugins.PluginTop + '/'+ config.plugins.PluginTop + '.js');
 }
 if (config.plugins.PluginLeft != null) {
-  PluginLeft = require('../plugins/' + config.plugins.PluginLeft);
+  PluginLeft = require('../plugins/' + config.plugins.PluginLeft + '/'+ config.plugins.PluginLeft + '.js');
 }
 if (config.plugins.PluginMid != null) {
-  PluginMid = require('../plugins/' + config.plugins.PluginMid);
+  PluginMid = require('../plugins/' + config.plugins.PluginMid + '/'+ config.plugins.PluginMid + '.js');
 }
 if (config.plugins.PluginRight != null) {
-  PluginRight = require('../plugins/' + config.plugins.PluginRight);
+  PluginRight = require('../plugins/' + config.plugins.PluginRight + '/'+ config.plugins.PluginRight + '.js');
 }
 if (config.plugins.PluginBottom != null) {
-  PluginBottom = require('../plugins/' + config.plugins.PluginBottom);
+  PluginBottom = require('../plugins/' + config.plugins.PluginBottom + '/'+ config.plugins.PluginBottom + '.js');
 }
 
 module.exports = React.createClass({
