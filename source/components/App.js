@@ -1,17 +1,13 @@
 var React = require('react');
 
 var MyCroftAdminPanel = require('./MycroftAdminPanel.js');
-var SysInfo = require('./SysInfo.js');
 var PluginZone = require('./PluginZone.js');
-//require('module');
 
 
 module.exports = React.createClass({
   getInitialState: function() {
     return {
-        'info': {
-          'Author': 'Josh McDonald'
-        },
+        'info': {},
         'mycroft': {}
       };
   },
@@ -28,13 +24,10 @@ module.exports = React.createClass({
     console.log('new state');
 
     var stateAddition = {
-      mycroft: {
-        'message': msg
-      }
+      mycroft: {'message': msg}
     };
 
     var newState = $.extend({}, this.state, stateAddition);
-    console.log(newState);
     this.setState(newState );
   },
   render: function() {

@@ -1,4 +1,3 @@
-//Using As Template
 var React = require('react');
 
 var config = require('../config.json');
@@ -9,7 +8,6 @@ var PluginMid = require('./Blank.js');
 var PluginRight = require('./Blank.js');
 var PluginBottom = require('./Blank.js');
 
-//Horrible :'(  '
 if (config.plugins.PluginTop != null) {
   PluginTop = require('../plugins/' + config.plugins.PluginTop + '/'+ config.plugins.PluginTop + '.js');
 }

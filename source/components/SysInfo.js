@@ -1,3 +1,4 @@
+//Component in progress
 var React = require('react');
 
 module.exports = React.createClass({
@@ -15,10 +16,7 @@ module.exports = React.createClass({
   },
   render: function() {
     return (
-      <header class="float-right text-muted">
-
-       ...
-      </header>
+      null
     );
   }
 });

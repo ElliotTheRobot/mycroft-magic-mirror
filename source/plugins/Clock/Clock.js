@@ -1,6 +1,4 @@
 var React = require('react');
-//global.jQuery = require('jquery');
-//$=global.jQuery
 
 //Should really ref a cdn...
 require('../../../node_modules/flipclock/compiled/flipclock.js');
