@@ -9,7 +9,9 @@ var PluginZone = require('./PluginZone.js');
 module.exports = React.createClass({
   getInitialState: function() {
     return {
-        'info': 'Author: Josh McDonald',
+        'info': {
+          'Author': 'Josh McDonald'
+        },
         'mycroft': {}
       };
   },
@@ -18,16 +20,18 @@ module.exports = React.createClass({
   onMycroftMessage: function(msg) {
     this.sendWSMessageToPlugins(msg);
   },
-  sendWSMessageToPlugins: function(msg) { 
+  sendWSMessageToPlugins: function(msg) {
     var mycroft_message = {
         'message': msg
     };
     console.log(mycroft_message);
     console.log('new state');
 
-    var stateAddition = {mycroft: {
+    var stateAddition = {
+      mycroft: {
         'message': msg
-    }};
+      }
+    };
 
     var newState = $.extend({}, this.state, stateAddition);
     console.log(newState);

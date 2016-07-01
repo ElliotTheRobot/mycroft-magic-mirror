@@ -7,8 +7,7 @@ var MycroftWebServiceButton = require('./MycroftWebServiceButton.js');
 module.exports = React.createClass({
 
   componentDidMount: function() {
-console.log("Admin Panel props: ");
-console.log(this.props);
+        $("#btn_admin").css({'background-color': 'black','border-color': 'white','border': 'none', 'outline':'none' });
   },
   sendMessage: function(event){
     var msg = JSON.parse(event.data);
@@ -19,7 +18,7 @@ console.log(this.props);
     return (
       <div>
         <div className="row">
-          <button id="btn_admin" data-toggle="collapse" data-target="#OptionsDiv" type="button" className="col-xs-12  btn btn-info btn-block" name="button">---admin---</button>
+          <button id="btn_admin" data-toggle="collapse" data-target="#OptionsDiv" type="button" className="col-xs-12  btn btn-info btn-block" name="button">Mycroft Inside</button>
 
         </div>
         <div id="OptionsDiv" className="collapse top-buffer ">
