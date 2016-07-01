@@ -6,14 +6,14 @@ var exec = require('child_process').exec;
 var config = require('../config.json');
 
 var mycroftCoreDir = config.paths.mycroftCoreDir//'/home/josh/mycroft-core';
-var installDir = config.paths.installDir //'/home/josh/mycroft-magic-mirror';
+ var installDir = config.paths.installDir //'/home/josh/mycroft-magic-mirror';
 
 
 
 module.exports = React.createClass({
 
   componentDidMount: function() {
-    console.log("button prps: ");
+    console.log("button props: ");
     console.log(this.props);
 
   },

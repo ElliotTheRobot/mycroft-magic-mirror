@@ -1,55 +1,72 @@
 var React = require('react');
 
-var MyCroftAdminPanel = require('./MycroftAdminPanel.js'); 
+var MyCroftAdminPanel = require('./MycroftAdminPanel.js');
 var SysInfo = require('./SysInfo.js');
-var ChatLog = require('./ChatLog.js');
 var PluginZone = require('./PluginZone.js');
 //require('module');
 
 
 module.exports = React.createClass({
   getInitialState: function() {
-    return {mycroftMessages:[]};
+    return {
+        'info': 'Author: Josh McDonald',
+        'mycroft': {}
+      };
   },
   componentDidMount: function() {
-    console.log("App.js");
-    console.log(this.props);
-//    this.setState({process: this.props.process});
   },
-  newMycroftMessage: function(msg) {
+  onMycroftMessage: function(msg) {
     console.log("Log from App.js: " + msg);
     console.log(msg);
+    this.sendWSMessageToPlugins(msg);
 
-    var messages = this.state.mycroftMessages;
-    var newMessages = null;
+//    var messages = this.state.mycroftMessages;
+//    var newMessages = null;
+//
+//    if (msg.message_type == 'speak') {
+//      newMessages =  messages.concat([{"id": msg.id , "origin": "Mycroft" , "text" : msg.metadata.utterance }]);
+//    } else if (msg.message_type == 'recognizer_loop:utterance') {
+//      newMessages =  messages.concat([{"id": msg.id , "origin": "You" , "text" : msg.metadata.utterances[0] }]);
+//    }
+//
+//    if (newMessages != null){
+//
+//      if (newMessages.length > 5){
+//        newMessages.shift();
+//      }
+//      console.log("Messages: ");
+//      console.log(newMessages);
+//      this.setState({mycroftMessages: newMessages});
+//    }
 
-    if (msg.message_type == 'speak') {
-      newMessages =  messages.concat([{"id": msg.id , "origin": "Mycroft" , "text" : msg.metadata.utterance }]);
-    } else if (msg.message_type == 'recognizer_loop:utterance') {
-      newMessages =  messages.concat([{"id": msg.id , "origin": "You" , "text" : msg.metadata.utterances[0] }]);
-    }
 
-    if (newMessages != null){
+  },
+  sendWSMessageToPlugins: function(msg) {
+    console.log('sending message ' + msg + ' to plugins');
+    console.log(msg);
+    console.log('created mc object');
+    var mycroft_message = {
+        'message': msg
+    };
+    console.log(mycroft_message);
+    console.log('new state');
 
-      if (newMessages.length > 5){
-        newMessages.shift();
-      }
-      console.log("Messages: ");
-      console.log(newMessages);
-      this.setState({mycroftMessages: newMessages});
-    }
+    var stateAddition = {mycroft: {
+        'message': msg
+    }};
 
-
+    var newState = $.extend({}, this.state, stateAddition);
+    console.log(newState);
+    this.setState(newState );
   },
   render: function() {
     return (
       <div className="container">
-        <MyCroftAdminPanel onMycroftOutput={this.newMycroftMessage} />
+        <MyCroftAdminPanel onMycroftOutput={this.onMycroftMessage} />
 
-        <PluginZone />
+        <PluginZone mycroft={this.state.mycroft}/>
 
         <div className="navbar navbar-fixed-bottom">
-          <ChatLog messages={this.state.mycroftMessages} />
         </div>
       </div>
     );

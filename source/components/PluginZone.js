@@ -28,34 +28,32 @@ if (config.plugins.PluginBottom != null) {
 
 module.exports = React.createClass({
   componentDidMount: function() {
-    console.log('Plugin Config Loaded');
+    console.log('Plugin Config is loaded into plugin zone: ');
     console.log(config);
   },
-//  getInitialState: function() {
 
-  //},
   render: function() {
     return (
       <div  className='PluginZone' >
         <div className='row'>
           <div className='PluginZone-Top col-xs-12'>
-            <PluginTop />
+            <PluginTop mycroftInfo={this.props.mycroft} />
           </div>
         </div>
         <div className='row'>
           <div className='PluginZone-Left col-xs-12 col-md-3'>
-            <PluginLeft />
+            <PluginLeft mycroftInfo={this.props.mycroft} />
           </div>
           <div className='PluginZone-Mid col-xs-12 col-md-6'>
-            <PluginMid />
+            <PluginMid mycroftInfo={this.props.mycroft} />
           </div>
           <div className='PluginZone-Right col-xs-12 col-md-3'>
-            <PluginRight />
+            <PluginRight mycroftInfo={this.props.mycroft} />
           </div>
         </div>
         <div className='row'>
           <div className='PluginZone-Bottom col-xs-12'>
-            <PluginBottom />
+            <PluginBottom mycroftInfo={this.props.mycroft} />
           </div>
         </div>
       </div>

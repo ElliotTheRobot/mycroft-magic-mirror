@@ -7,7 +7,7 @@ var MycroftWebServiceButton = require('./MycroftWebServiceButton.js');
 module.exports = React.createClass({
 
   componentDidMount: function() {
-console.log("Admin PAnel prps: ");
+console.log("Admin Panel props: ");
 console.log(this.props);
   },
   sendMessage: function(event){
