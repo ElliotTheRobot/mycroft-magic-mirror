@@ -7,7 +7,7 @@
     "PluginBottom" : "MessageLog"
   },
   "paths":{
-    "mycroftCoreDir":"/home/josh/mycroft-core",
-    "installDir":"/home/josh/mycroft-magic-mirror"
+    "mycroftCoreDir":"/home/pi/mycroft-core",
+    "installDir":"/home/pi/mycroft-magic-mirror"
   }
 }
