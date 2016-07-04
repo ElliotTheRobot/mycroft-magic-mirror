@@ -16,7 +16,7 @@ function createWindow() {
     windowConfig.fullscreen = true;
     windowConfig.kiosk = true;
   } else {
-    //windowConfig.frame = false;
+    windowConfig.frame = false;
     windowConfig.width = 500;
     windowConfig.height = 700;
     windowConfig.title = "Mycroft UI v0.0";
