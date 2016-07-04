@@ -5,18 +5,25 @@ const {BrowserWindow} = electron;
 
 let win;
 
+global.sharedObject = {args: process.argv}
+
 function createWindow() {
 
-  win = new BrowserWindow(
-    {
-      width: 1000,
-      height: 800,
-      //frame: false,
-      //transparent: true,
-      title: "Mycroft UI v0.0",
-      //fullscreen: true
-    }
-  );
+  var windowConfig = {};
+
+  if (process.argv[2] === 'mirror') {
+    windowConfig.title = "Magic Mycroft Mirror";
+    windowConfig.fullscreen = true;
+    windowConfig.kiosk = true;
+  } else {
+    //windowConfig.frame = false;
+    windowConfig.width = 500;
+    windowConfig.height = 700;
+    windowConfig.title = "Mycroft UI v0.0";
+  }
+
+
+  win = new BrowserWindow( windowConfig );
 
   win.loadURL('file://'+__dirname+'/index.html');
 

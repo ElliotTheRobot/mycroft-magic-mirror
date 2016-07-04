@@ -7,7 +7,7 @@ var MycroftWebServiceButton = require('./MycroftWebServiceButton.js');
 module.exports = React.createClass({
 
   componentDidMount: function() {
-        $("#btn_admin").css({'background-color': 'black','border-color': 'white','border': 'none', 'outline':'none' });
+        $("#btn_admin").css({'background-color': 'Transparent','background-repeat': 'no-repeat','border': 'none', 'outline':'none' });
   },
   sendMessage: function(event){
     var msg = JSON.parse(event.data);

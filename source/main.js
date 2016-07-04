@@ -11,6 +11,12 @@ var App = require('./components/App.js');
 require('file?name=[name].[ext]!./index.html');
 require('./styles.css');
 
+if (global.MCArgs[2] === 'mirror') {
+  require('./stylesMirror.css');
+} else {
+  require('./stylesDesktop.css');
+}
+
 //jQuery sucks in npm with bootstrap
 
 

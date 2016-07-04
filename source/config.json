@@ -1,10 +1,15 @@
 {
-  "plugins":{
+  "pluginsMirror":{
     "PluginTop" : null,
     "PluginLeft" : "Clock",
     "PluginMid" : null,
     "PluginRight" : null,
     "PluginBottom" : "MessageLog"
+  },
+  "pluginsDesktop":{
+    "PluginTop" : "Clock",
+    "PluginMid" : "MessageLog",
+    "PluginBottom" : null
   },
   "paths":{
     "mycroftCoreDir":"/home/josh/mycroft-core",

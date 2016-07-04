@@ -2,13 +2,18 @@ var React = require('react');
 
 var MyCroftAdminPanel = require('./MycroftAdminPanel.js');
 var PluginZone = require('./PluginZone.js');
-
+var config = require('../config.json');
 
 module.exports = React.createClass({
   getInitialState: function() {
+
+    var args = global.MCArgs;
+    config.args = args;
+
     return {
         'info': {},
-        'mycroft': {}
+        'mycroft': {},//,
+        'config': config
       };
   },
   componentDidMount: function() {
@@ -20,8 +25,6 @@ module.exports = React.createClass({
     var mycroft_message = {
         'message': msg
     };
-    console.log(mycroft_message);
-    console.log('new state');
 
     var stateAddition = {
       mycroft: {'message': msg}
@@ -33,8 +36,9 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div className="container">
+      <p> </p>
         <MyCroftAdminPanel onMycroftOutput={this.onMycroftMessage} />
-        <PluginZone mycroft={this.state.mycroft} />
+        <PluginZone config={this.state.config} mycroft={this.state.mycroft} />
       </div>
     );
   }

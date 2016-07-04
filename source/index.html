@@ -8,7 +8,12 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
   </head>
   <body>
+    <div id="draggableArea" style=" height: 20px; -webkit-app-region: drag" />
     <div id="app"></div>
+    <script type="text/javascript">
+      var remote = require('electron').remote;
+      global.MCArgs = remote.getGlobal('sharedObject').args;
+    </script>
     <script src="./bundle.js"></script>
   </body>
 </html>
