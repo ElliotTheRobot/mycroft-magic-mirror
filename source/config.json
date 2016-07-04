@@ -9,7 +9,7 @@
   "pluginsDesktop":{
     "PluginTop" : "Clock",
     "PluginMid" : "MessageLog",
-    "PluginBottom" : null
+    "PluginBottom" : "ChatBox"
   },
   "paths":{
     "mycroftCoreDir":"/home/pi/mycroft-core",
