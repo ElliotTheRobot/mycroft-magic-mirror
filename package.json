@@ -9,16 +9,16 @@
     "start-desktop":"webpack && electron . desktop manual",
     "start-desktop-auto":"webpack && electron . desktop auto",
     "start-desktop-manual":"webpack && electron . desktop manual",
-    "start-mirror":"webpack && electron . desktop auto",
-    "start-mirror-auto":"webpack && electron . desktop auto",
-    "start-mirror-manual":"webpack && electron . desktop manual"
+    "start-mirror":"webpack && electron . mirror auto",
+    "start-mirror-auto":"webpack && electron . mirror auto",
+    "start-mirror-manual":"webpack && electron . mirror manual"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/joshymcd/magic-mycroft-mirror.git"
+    "url": "https://github.com/joshymcd/mycroft-magic-mirror.git"
   },
   "author": "Joshua McDonald",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
