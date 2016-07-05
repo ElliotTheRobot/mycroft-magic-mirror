@@ -34,15 +34,28 @@ module.exports = React.createClass({
   },
 
   setTime: function(){
-    var currentdate = new Date();
-
-    var day = currentdate.getDay();
+  	
+  	var currentdate = new Date();
+  	
+	var day = currentdate.getDay();
     var date = currentdate.getDate();
     var month = currentdate.getMonth();
-    var hours = currentdate.getUTCHours();// + parseInt(this.props.UTCOffset);
+    var offset = Math.abs(currentdate.getTimezoneOffset())/60;
+    var hours = currentdate.getUTCHours()+offset;
     var minutes = currentdate.getUTCMinutes();
     var seconds = currentdate.getUTCSeconds();
-
+    
+    // pad the hours, minutes and seconds
+    if(hours < 10) {
+    	hours = "0" + hours;	
+    }
+    if(minutes < 10) {
+    	minutes = "0" + minutes;	
+    }
+    if(seconds < 10) {
+    	seconds = "0" + seconds;	
+    }
+    
     this.setState({
       day: day,
       date: date,
